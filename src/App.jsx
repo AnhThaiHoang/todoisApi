@@ -1,3 +1,4 @@
+import Project from './components/Project'
 import {TOKEN} from './secret/token'
 
 function App() {
@@ -5,8 +6,7 @@ function App() {
   
   return (
     <>
-      {console.log(TOKEN)}
-      <h1>Test</h1>    
+      <Project token={TOKEN} />
     </>
   )
 }
