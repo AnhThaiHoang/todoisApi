@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import ProjectTable from "./ProjectTable";
 
 
 
@@ -27,16 +28,7 @@ function Project({token}){
     return(
         <div>
             <h1>Projekty:</h1>
-            <ul>
-                {projects.map((e, i) => 
-                    <li>
-                        {e.id}
-                        <br/>
-                        {e.color}
-                    </li>
-                )}
-            </ul>
-            {JSON.stringify(projects)}
+            <ProjectTable projects={projects} />
         </div>
     )
 
