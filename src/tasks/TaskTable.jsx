@@ -1,20 +1,24 @@
  
-function ProjectTable({projects}){
+function TaskTable({tasks}){
 
     return(
         <table className="table table-border-bottom table-dark">
             <thead>
                 <tr>
-                    <th>name</th>
+                    <th>id projektu</th>
+                    <th>obsah</th>
                     <th>url</th>
-                    <th>action</th>
+                    <th>priorita</th>
+                    <th>akce</th>
                 </tr>
             </thead>
             <tbody>
-                {projects.map((e, i) =>
+                {tasks.map((e, i) =>
                     <tr  key = {i}>
-                        <td>{e.name}</td>
+                        <td>{e.project_id}</td>
+                        <td>{e.content}</td>
                         <td>{e.url}</td>
+                        <td>{e.priority}</td>
                         <td></td>
                     </tr>
                 )}
@@ -24,4 +28,4 @@ function ProjectTable({projects}){
 
 }
 
-export default ProjectTable;
+export default TaskTable;
