@@ -1,24 +1,16 @@
-import axios from "axios";
 import { useEffect, useState } from "react";
 import ProjectTable from "./ProjectTable";
 
 
 
-function Project({token}){
+function Project({api}){
     
     const [projects, setProjects] = useState([]);
 
-    const todoistApi = axios.create({
-        baseURL: ' https://api.todoist.com/rest/v2/projects',
-        headers: {
-          'Authorization': `Bearer ${token}`,
-          'Content-Type': 'application/json'
-        }
-      });
 
     useEffect(() => {
         async function fetchApi() {
-            const result = await todoistApi.get();
+            const result = await api.get("/projects");
             setProjects(result.data);
         }
 

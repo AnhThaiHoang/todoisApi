@@ -1,21 +1,14 @@
-import axios from "axios";
 import { useState, useEffect } from "react";
 import TaskTable from "./TaskTable";
 
-function Task({token}){
+function Task({api}){
     const [tasks, setTasks] = useState([]);
 
-    const todoistApi = axios.create({
-        baseURL: 'https://api.todoist.com/rest/v2/tasks',
-        headers: {
-          'Authorization': `Bearer ${token}`,
-          'Content-Type': 'application/json'
-        }
-      });
+
 
       useEffect(() => {
         async function fetchApi() {
-            const result = await todoistApi.get();
+            const result = await api.get("/tasks");
             setTasks(result.data);
         }
 

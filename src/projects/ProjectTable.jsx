@@ -2,7 +2,7 @@
 function ProjectTable({projects}){
 
     return(
-        <table className="table table-border-bottom table-dark">
+        <table className="table table-border-bottom table-light">
             <thead>
                 <tr>
                     <th>jméno</th>
